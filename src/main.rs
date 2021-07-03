@@ -33,7 +33,7 @@ fn main() {
         .args(&["--wide", "--one-header", "--unit", "M", "1"])
         .stdout(Stdio::piped())
         .spawn()
-        .expect(format!("Unable to start vmstat").as_str());
+        .expect("Unable to start vmstat");
 
     let reader = BufReader::new(child.stdout.unwrap());
     for line in reader.lines().skip(2) {
