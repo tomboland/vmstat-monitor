@@ -1,0 +1,13 @@
+[Unit]
+Description=VMStat Monitor
+
+[Service]
+Type=simple
+User=vmstat-monitor
+RuntimeDirectory=vmstat-monitor
+WorkingDirectory=/var/run/vmstat-monitor/
+ExecStart=/usr/local/bin/vmstat-monitor "out"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
